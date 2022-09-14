@@ -51,16 +51,20 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello {},My Name is IGRIS
-𝐈 𝐀𝐌 𝐀 𝐑𝐎𝐘𝐀𝐋 𝐊𝐍𝐈𝐆𝐇𝐓 𝐅𝐑𝐎𝐌 𝐒𝐎𝐋𝐎 𝐋𝐄𝐕𝐄𝐋𝐈𝐍𝐆.
-I will help you manage your group.
-TO KNOW MY COMMANDS CLICK /help.
+🥀ʜᴇʏ ᴛʜᴇʀᴇ {}, 
+🪐𝐈𝐌 𝐏ᴏᴡᴇʀ 𝐅ʀᴏᴍ 𝐂ʜᴀɪɴsᴀᴡ
+𝐌ᴀɴ.
+✨ᴀ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.
+• ʙʏ @GodlyDemxn
+
+🍃ᴛᴏ ᴋɴᴏᴡ ᴄᴏᴍᴍᴀɴᴅs:- /help
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a Shadow From Solo Leveling,I will help you manage your groups! Have a look at the following for an idea of some of \
-the things I can help you with.
+🥀ʜᴇʏ ᴛʜᴇʀᴇ {}, 
+🪐𝐈𝐌 𝐏ᴏᴡᴇʀ 𝐅ʀᴏᴍ 𝐂ʜᴀɪɴsᴀᴡ
+𝐌ᴀɴ.
+ɪ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ.
 
 *Main* commands available:
  • /help: PM's you this message.
@@ -77,7 +81,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/3d6b5ac78befd0bffac47.mp4"
+SAITAMA_IMG = "https://telegra.ph/file/2045e69a0521274a649f8.jpg"
 
 DONATE_STRING = """donate to the original writer of the Base code, Paul
 There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
@@ -178,17 +182,17 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(                   
                           [[
                               InlineKeyboardButton(
-                              text="🔥Add IGRIS To Your Group🔥",
+                              text="Add Power To Your Group",
                               url="t.me/{}?startgroup=true".format(
                                   context.bot.username))
                           ], 
                           [
                               InlineKeyboardButton(
-                              text="🍁Support Group🍁",
-                              url=f"https://t.me/IGRISBOTSUPPORT"),
+                              text="Support Group",
+                              url=f"https://t.me/kakashi_bots_support"),
                               InlineKeyboardButton(
-                              text="✨Updates Channel✨",
-                              url="https://t.me/IGRISROBOT_SUPPORT")
+                              text="Updates Channel",
+                              url="https://t.me/kakashi_bots_updates")
                           ]])) 
     else:
         update.effective_message.reply_text(
