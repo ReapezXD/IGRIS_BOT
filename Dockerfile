@@ -1,5 +1,5 @@
 # We're using Debian Slim Buster image
-FROM python:3.8.5-slim-buster
+FROM python:3.9.6-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -62,16 +62,15 @@ RUN apt update && apt upgrade -y && \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
 
 # Pypi package Repo upgrade
+RUN apt-get install -y ffmpeg python3-pip curl
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/SaitamaRobot
-RUN git clone -b shiken https://github.com/AnimeKaizoku/SaitamaRobot /root/SaitamaRobot
-WORKDIR /root/SaitamaRobot
-
-#Copy config file to /root/SaitamaRobot/SaitamaRobot
-COPY ./SaitamaRobot/sample_config.py ./SaitamaRobot/config.py* /root/SaitamaRobot/SaitamaRobot/
-
 ENV PATH="/home/bot/bin:$PATH"
+
+# make directory
+RUN mkdir /SaitamaRobot/
+COPY . /SaitamaRobot 
+WORKDIR /SaitamaRobot 
 
 # Install requirements
 RUN pip3 install -U -r requirements.txt
